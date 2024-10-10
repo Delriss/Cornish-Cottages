@@ -1,0 +1,663 @@
+/*
+Theme Name: Cornish Holiday Cottages
+Theme URI: https://cornishcottages.com
+Author: Finley Pettit
+Author URI: https://github.com/Delriss
+Description: Theme for the Cornish Holiday Cottages website! 
+Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Version: 1.0
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 7.0
+License: GNU General Public License v3 or Later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: Cornish Cottages Theme
+
+Cornish Cottages WordPress Theme © 2024  
+Cornish Cottages Theme is distributed under the terms of the GNU GPL
+
+Did this commit work?
+
+*/
+
+
+/* CSS RESET - Do not change */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}html{scroll-behavior:smooth}body{line-height:1}a{text-decoration-skip-ink:auto}a[href^="tel"]{color:inherit;text-decoration:none}button{outline:0}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}q{display:inline;font-style:italic}q:before{content:'"';font-style:normal}q:after{content:'"';font-style:normal}textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"]{-webkit-appearance:none;appearance:none;border-radius:0}input[type="search"]{-webkit-appearance:textfield}table{border-collapse:collapse;border-spacing:0}th,td{padding:2px}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd,tt{font-family:courier;font-size:12px}ins{text-decoration:underline}del,strike,s{text-decoration:line-through}dt{font-weight:bold}address,cite,var{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal}
+.screen-reader-text:focus{background-color:#f7f7f7;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#007acc;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;right:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
+.skip-link{left:-9999rem;top:2.5rem;z-index:999999999;text-decoration:underline}
+.skip-link:focus{display:block;left:6px;top:7px;font-size:14px;font-weight:600;text-decoration:none;line-height:normal;padding:15px 23px 14px;z-index:100000;right:auto}
+.visually-hidden:not(:focus):not(:active), .form-allowed-tags:not(:focus):not(:active){position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);white-space:nowrap}
+/* CSS RESET - Do not change */
+
+
+/* YOUR CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Cinzel:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700&family=Raleway&display=swap');
+
+body{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden;
+}
+
+.container{
+	min-height: 100vh;
+}
+
+/* Manual Reset for some elements as it seems to be overridden by CSS Reset */
+h2
+{
+	font-weight: bold;
+    font-size: 1.5em;
+}
+
+h3
+{
+	font-weight: bold;
+    font-size: 1.17em;
+}
+
+strong
+{
+	font-weight: bold;
+}
+
+/************************************************************/
+/*HEADER STYLING*/
+header{
+    width: 100%;
+    height: 100%;
+    background-color: #757194;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainNav{
+    width:100%;
+    display:flex;
+    justify-content: end;
+}
+
+#logo{
+    width: 400px;
+	padding: 20px;
+}
+
+.mainNav ul{
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+    list-style: none;
+    color: white;
+    padding-right: 50px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-weight: light;
+    font-size: 16pt;
+}
+
+.mobileBurgerMenu{
+	display: none;
+	text-align: center;
+	padding: 20px;
+}
+
+.mobileNav {
+    display: none;
+}
+
+.menuToggle {
+    display: none;
+}
+
+.burgerIcon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.burgerIcon i {
+    font-size: 24px;
+}
+
+#menuToggle:checked + .burgerIcon i:before {
+    content: "\f00d";
+}
+
+#menuToggle:checked + .burgerIcon i:before {
+    content: "\f00d";
+}
+
+#menuToggle:checked + .burgerIcon + .mobileNav {
+    display: block;
+}
+/*HEADER STYLING END*/
+/************************************************************/
+
+/************************************************************/
+/*HOME PAGE STYLING*/
+/*HERO STYLINGS*/
+.hero{
+    width: 100%;
+    height: 75vh;
+    background-image: url(./imgs/cottage7.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0 0 10% 10%;
+    color: white;
+    font-size: 18pt;
+}
+
+.heroContainer
+{
+	height: 60%;
+	padding: 40px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.hero h1{
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+.btnHeroView
+{
+    width: 200px;
+    color: white;
+    border: white solid 2px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+/*HERO STYLING END*/
+
+.containerCenter{
+	width:100%;
+	display: flex;
+	justify-content: center;
+}
+
+/*CARD STYLINGS*/
+.cardBox {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+	padding-top: 100px;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 40px; 
+    box-sizing: border-box;
+}
+
+.cardIMG {
+    width: 100%;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #757194;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	object-fit: cover;
+}
+
+.cardContent {
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.cardContent h3 {
+    margin-bottom: 20px;
+}
+
+.cardContent p {
+    margin-bottom: 30px;
+}
+
+.btnViewCottages
+{
+    width: 200px;
+    height: 50px;
+    color: black;
+    border: black solid 2px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*CARD STYLINGS END*/
+
+/*SLIDER STYLINGS*/
+.sliderContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding-top: 75px;
+}
+
+#sliderText {
+	padding-bottom: 20px;
+}
+/*SLIDER STYLINGS*/
+
+/*ABOUT STYLINGS*/
+.quickAbout {
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-top: 100px;
+}
+
+.aboutIMGcontainer {
+    width: 100%;
+    height: 100%;
+    background-image: url(./imgs/cottage4.jpg);
+    background-size: cover;
+}
+
+.aboutInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+	padding: 20px;
+	text-align: center;
+}
+/*ABOUT STYLINGS END*/
+/*HOME PAGE STYLING END*/
+/************************************************************/
+
+/************************************************************/
+/*PROPERTY PAGE STYLING*/
+
+.containerPropCenter{
+	width:100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.propertyContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.propertyIMG {
+    width: 100%;
+    height: 100%;
+	border-radius: 0 0 10% 0;
+}
+
+.propertyIMG > img {
+	border-radius: inherit;
+}
+
+.propertyIMG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.propertyContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.propTitle {
+    font-size: 36pt;
+    font-weight: bold;
+}
+
+#propDivider {
+    width: 100%;
+    height: 2px;
+    background-color: #757194;
+    margin: 20px 0;
+}
+
+.propDesc {
+    width: 80%;
+    text-wrap: normal;
+}
+
+.propDetails {
+	padding-top: 40px;
+}
+
+.propertyIcons {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    font-size: 12pt;
+    text-align: left;
+}
+
+.propertyIcons :nth-child(odd)
+{
+    background-color: black;
+    color: white;
+}
+
+.propertyIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.reviewFormContainer
+{
+	width: 75%;
+	padding: 30px;
+}
+
+.reviewScore
+{
+	padding: 30px;
+}
+
+/*PROPERTY PAGE STYLING END*/
+/************************************************************/
+/************************************************************/
+/*PROPERTIES PAGE STYLING*/
+.propertiesContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.propertiesTitle{
+    font-size: 36pt;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.propertyCardBox {
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.propertyCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 40px; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.propertyCardIMG {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #757194;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.propertyCardIMG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.propertyCardContent {
+	display: flex;
+	flex-direction: column;
+    flex-grow: 1;
+    margin-top: 20px;
+	align-items: center;
+}
+
+.propertyCardContent h3 {
+    margin-bottom: 20px;
+}
+
+.propertyCardContent p {
+    margin-bottom: 30px;
+}
+
+/*PROPERTIES PAGE STYLING END*/
+/************************************************************/
+
+/************************************************************/
+/*FORM PAGE STYLING*/
+.formPageContainer{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.formContainer{
+    width: 80%;
+    height: 100%;
+	margin: 30px;
+	padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formContent{
+    width: 80%;
+    padding: 20px;
+}
+
+.formDetailsInfo{
+	padding-top: 20px;
+}
+
+/*FORM PAGE STYLING END*/
+/************************************************************/
+
+/************************************************************/
+/*FOOTER PAGE STYLING*/
+footer
+{
+    width: 100%;
+    height: 100%;
+    background-color: #757194;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    bottom: 0;
+}
+
+.footerList
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding:20px;
+}
+
+.footerList ul
+{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fab
+{
+    color: white;
+    text-decoration: none;
+    font-size: 18pt;
+}
+
+#privPolicy
+{
+    color:white;
+    font-size: 12pt;
+}
+/*FOOTER STYLING END*/
+/************************************************************/
+
+.privacyPolicyContainer{
+	width: 80%;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	text-wrap: wrap;
+}
+
+.privacyPolicyContainer > * {
+	padding-bottom: 20px;
+}
+
+
+/*Media Queries and Mobile*/
+@media screen and (max-width: 1024px) {
+	header{
+		flex-direction: column;
+		justify-content: none;
+		align-items: center;
+	}
+	
+	.heroContainer{
+		height: 100%;
+	}
+	
+	.mainNav {
+		display: none;
+	}
+	
+	.mobileBurgerMenu{
+		display: block;
+	}	
+	
+    .card-box {
+        grid-template-columns: 1fr;
+    }
+	
+	.quickAbout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .aboutIMGcontainer {
+        height: 300px;
+    }
+	
+	#aboutText{
+		padding: 20px;
+	}
+	
+	.containerPropCenter {
+		text-align: center;
+	}
+	
+	.propertyContainer {
+        grid-template-columns: 1fr; /* Change to a single column layout */
+    }
+	
+	.propertyContent {
+		height: 1200px;
+		align-items: center;
+		text-align: center;
+	}
+	
+	.propertyIMG {
+		border-radius: 0 0 10% 10%;
+	}
+	
+	 .propertyCardBox {
+		 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+	
+	.formContainer
+	{
+		text-align: center;
+	}
+	
+	.footerList ul{
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	.footerList ul li{
+		padding: 5px;
+	}
+}
